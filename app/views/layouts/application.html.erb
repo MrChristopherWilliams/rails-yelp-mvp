@@ -4,12 +4,27 @@
     <title>RailsYelpMvp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- Add these line for detecting device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- [...] -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/restaurants">AirRest</a>
+        </div>
+        <div>
+          <a class="btn btn-outline-success my-2 my-sm-0" href="/restaurants/new">Add a restaurant</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
